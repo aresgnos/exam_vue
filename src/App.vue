@@ -1,26 +1,51 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+
+    <el-container>
+
+      <el-header>
+        <el-menu default-active="/" 
+        class="el-menu-demo"
+        mode="horizontal"
+        :router = "true">
+
+        <el-menu-item index="/">Home</el-menu-item>
+        <el-menu-item index="/board">Board</el-menu-item>
+        <el-menu-item index="/write">Write</el-menu-item>
+    
+        </el-menu>
+      </el-header>
+
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+
+      <el-footer>Footer</el-footer>
+
+    </el-container>
+    
+    
+    
+    
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  export default {
+    setup() {
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+      return{}
+    }
+    
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="css" scoped>
+.el-footer {
+  text-align : center;
+  border-top : 1px #e6e6e6 solid;
+  padding : 20px;
 }
+
 </style>
